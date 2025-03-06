@@ -1,36 +1,34 @@
-//import path from 'path' //esto es para la modificacion de imagenes pequena o grandes
-//import fs from 'fs'
-//import {glob} from 'glob'
-import { src, dest, watch, series } from 'gulp' /// o en ves de series, parallel
+import path from 'path'
+import fs from 'fs'
+import { glob } from 'glob'
+import { src, dest, watch, series } from 'gulp'
 import * as dartSass from 'sass'
 import gulpSass from 'gulp-sass'
 
-const sass = gulpSass(dartSass);
+const sass = gulpSass(dartSass)
 
-//import terser from 'gulp-terser'; // esto para quitas los espacios 
-//import sharp from 'sharp'//esto es para la modificacion de imagenes pequena o grandes
+import terser from 'gulp-terser'
+import sharp from 'sharp'
 
-/*export function js(done){
+export function js( done ) {
     src('src/js/app.js')
-    //.pipe(terser())
-    .pipe(dest('build/js'))
-    
-    done();
-}*/ //esto es para java y aun no se necesita
+        .pipe(terser())
+        .pipe( dest('build/js') ) 
 
-export function css(done) {
-    src('src/scss/app.scss', {sourcemaps: true})
-        .pipe(sass(/*{
-            outputStyle: 'compressed'                // esto es para minificar el css osea quitar espacios y asi
-        }*/
-        ).on('error', sass.logError))
-        .pipe(dest('build/css', {sourcemaps: '.'}))
-
-    done();
+    done()
 }
 
+export function css( done ) {
+    src('src/scss/app.scss', {sourcemaps: true})
+        .pipe( sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError) )
+        .pipe( dest('build/css', {sourcemaps: '.'}) )
 
-/*export async function crop(done) {
+    done()
+}
+
+export async function crop(done) {
     const inputFolder = 'src/img/gallery/full'
     const outputFolder = 'src/img/gallery/thumb';
     const width = 250;
@@ -56,24 +54,22 @@ export function css(done) {
     } catch (error) {
         console.log(error)
     }
-}*/
+}
 
+export async function imagenes(done) {
+    const srcDir = './src/img';
+    const buildDir = './build/img';
+    const images =  await glob('./src/img/**/*{jpg,png}')
 
+    images.forEach(file => {
+        const relativePath = path.relative(srcDir, path.dirname(file));
+        const outputSubDir = path.join(buildDir, relativePath);
+        procesarImagenes(file, outputSubDir);
+    });
+    done();
+}
 
-//export async function imagenes(done) {
-    //const srcDir = './src/img';
-    //const buildDir = './build/img';
-    //const images =  await glob('./src/img/**/*{jpg,png}')
-
-    //images.forEach(file => {
-        //const relativePath = path.relative(srcDir, path.dirname(file));
-        //const outputSubDir = path.join(buildDir, relativePath);
-        //procesarImagenes(file, outputSubDir);
-    //});
-    //done();
-//}
-
-/* function procesarImagenes(file, outputSubDir) {
+function procesarImagenes(file, outputSubDir) {
     if (!fs.existsSync(outputSubDir)) {
         fs.mkdirSync(outputSubDir, { recursive: true })
     }
@@ -87,13 +83,12 @@ export function css(done) {
     sharp(file).jpeg(options).toFile(outputFile)
     sharp(file).webp(options).toFile(outputFileWebp)
     sharp(file).avif().toFile(outputFileAvif)
-} */
-
+}
 
 export function dev() {
     watch('src/scss/**/*.scss', css)
-    //watch('src/js/**/*.js', js)
-    //watch('src/img/**/*.{png, jpg}', imagenes)
+    watch('src/js/**/*.js', js)
+    watch('src/img/**/*.{png,jpg}', imagenes)
 }
 
-export default series(/*crop, js,*/ css, /*imagenes,*/ dev)
+export default series( crop, js, css, imagenes, dev )

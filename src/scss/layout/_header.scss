@@ -1,0 +1,36 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header {
+    background-image: url(../img/gallery/full/placep.png);
+    background-color: rgba(23, 23, 23, 0.6);
+    background-blend-mode: overlay;
+    background-position: center center;
+    background-size: cover;
+
+    @include m.tablet {
+        min-height: 45rem;
+    }
+}
+
+.container-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include m.tablet {
+    }
+    p{
+        text-align: center;
+        color: v.$white;
+        font-weight: bold;
+        margin: 0;
+        padding: 1.5rem;
+        font-size: 1.2rem;
+
+        @include m.tablet{
+            font-size: 2rem;
+            width: 60rem;
+            padding: 30rem 2rem 2rem 10rem;
+        }
+    }
+}

@@ -1,0 +1,88 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: v.$green;
+    height: auto;
+    width: 100%;
+
+    @include m.tablet {
+        flex-direction: row;
+        box-shadow: .5rem 2rem 2rem #333;
+    }
+
+    h1{
+        text-align: center;
+        color: v.$white;
+        font-weight: bold;
+        margin: 0;
+        padding: 1rem;
+        @include m.tablet {
+            text-align: left;
+            padding-left: 5rem;
+        }
+
+    }
+}
+
+.navigation-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    @include m.tablet {
+        flex-direction: row;
+        gap: 10rem;
+        padding: 2rem 7rem 2rem 0rem;
+        margin: 0;
+        float: right;
+    }
+
+    a {
+        color: v.$white;
+        font-size: 2rem;
+        margin: 0;
+        padding: 0;
+
+        &:hover,
+        &.active {
+            color: v.$yellow;
+        }
+    }
+}
+
+
+.navigation-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include m.tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+        float: left;
+        padding: 0rem 1rem;
+        margin: 0;
+    }
+
+    a {
+        color: v.$white;
+        font-size: 1.5rem;
+
+        &:hover,
+        &.active {
+            color: v.$yellow;
+        }
+    }
+
+    p {
+        font-size: 1.3rem;
+    }
+}

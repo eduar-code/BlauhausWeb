@@ -1,0 +1,112 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+:root {
+    --total-time: 10s;
+    --coffe-delay: calc(var(--total-time) / 3.5);
+    --coffe-time: calc(var(--total-time) / 4);
+    --cup-delay: calc(var(--total-time) / 2.7);
+    --cup-time: calc(var(--total-time) / 3);
+    --under-delay: calc(var(--total-time) / 1.5);
+    --under-time: calc(var(--total-time) / 3.75);
+}
+
+.content-main {
+    padding: 1.5rem;
+    --r: 5rem;
+    height: auto;
+    border-radius: 2rem;
+    background-color: v.$coffelow;
+    mask: radial-gradient(var(--r) at var(--r), #0000 calc(100% - .1rem), #000) calc(-1*var(--r));
+    h1 {
+        margin: 2rem;
+        text-align: center;
+        color: v.$yellow;
+        -webkit-text-stroke: .03rem v.$white;
+        text-shadow: 0 2rem 3rem v.$yellow;
+    }
+   
+    @include m.tablet{
+        height: auto;
+    }
+
+}
+
+.presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    @include m.tablet{
+        flex-direction: row;
+    }
+}
+
+.coffe-logo {
+    @include m.tablet{
+        padding-left: 2rem;
+    }
+    .container-coffe {
+        width: 20rem;
+        height: 20rem;
+        border-radius: 4rem;
+        background: v.$white;
+        box-shadow: 0 .5rem 3rem rgb(199, 199, 199);
+    }
+
+    .coffee {
+        fill: #d3935b;
+        opacity: 0;
+        animation: anim var(--coffe-time) linear var(--coffe-delay);
+        animation-fill-mode: forwards;
+    }
+
+    .cup {
+        fill: #6aa1d1;
+        opacity: 0;
+        animation: anim var(--cup-time) linear var(--cup-delay);
+        animation-fill-mode: forwards;
+    }
+
+    .under {
+        fill: #d3a5a5;
+        opacity: 0;
+        animation: anim var(--under-time) linear var(--under-delay);
+        animation-fill-mode: forwards;
+    }
+
+    .line {
+        fill: none;
+        stroke-width: 1;
+        stroke: rgb(78, 78, 78);
+        stroke-dasharray: 1800;
+        stroke-dashoffset: 1800;
+        animation: line var(--total-time) ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes line {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @keyframes anim {
+        to {
+            opacity: 1;
+        }
+    }
+
+
+}
+
+.presentation-info {
+
+    p {
+        color: v.$white;
+        font-size: 1.7rem;
+        text-align: center;
+        padding-right: 2rem;
+    }
+}

@@ -7,6 +7,7 @@
     background-blend-mode: overlay;
     background-position: center center;
     background-size: cover;
+    box-shadow: 0 .7rem 4rem v.$lightgrey;
 
     @include m.tablet {
         min-height: 45rem;

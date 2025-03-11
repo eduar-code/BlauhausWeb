@@ -1,18 +1,25 @@
 $font_main : "Merienda", sans-serif; //change font
 
 // Colores
-$green:#7c8c0383;
+
 $pink: #F53756;
 $yellow: #fdda00;
 $purple: #752F97;
-$blueBla: #162737;
 $black: #000000;
 $white: #FFFFFF;
 $red: #ef0a0a;
 $lightgrey: #828281;
-$opacitygrey: #82828195;
 $plusgrey: #474747;
 $shadow:  #d7d7d7;
+
+//color from local
+$green:#7c8c0383;
+$greenOpacity:#7c8c03;
+$opacitygrey: #82828195;
+$blueBla: #162737;
+$blueblalow: #354FAC; 
+$coffelow: #BF7B3F;
+$coffeBla: #733A26;
 
 //Media Queries
 $cellphone: 480px;
@@ -20,4 +27,6 @@ $tablet: 768px;
 $mindesktop: 1020px;
 $desktop: 1200px;
 $desktopXL: 1400px;
+
+$separation: 7rem;
 

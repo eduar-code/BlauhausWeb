@@ -1,0 +1,12 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.seccion {
+    margin-top: calc(v.$separation / 2);
+    margin-bottom: calc(v.$separation / 2);
+}
+
+.content-center {
+    max-width: 80rem;
+}

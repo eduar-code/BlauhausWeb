@@ -314,9 +314,9 @@ html {
 }
 
 *,
-*:before,
-*:after {
-  box-sizing: inherit;
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -326,7 +326,6 @@ body {
   color: #000000;
   font-size: 2rem;
   background-color: #FFFFFF;
-  background-color: #162737;
 }
 body.overflow-hidden {
   overflow: hidden;
@@ -386,12 +385,22 @@ body > section {
   padding: 10rem 0;
 }
 
+.seccion {
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.content-center {
+  max-width: 80rem;
+}
+
 .header {
   background-image: url(../img/gallery/full/placep.png);
   background-color: rgba(23, 23, 23, 0.6);
   background-blend-mode: overlay;
   background-position: center center;
   background-size: cover;
+  box-shadow: 0 0.7rem 4rem #828281;
 }
 @media (min-width: 768px) {
   .header {
@@ -498,4 +507,153 @@ body > section {
 }
 .navigation-footer p {
   font-size: 1.3rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #733A26;
+  margin-bottom: 0;
+}
+
+.glass {
+  --s: 1.5rem; /* size of the wave */
+  --b: .7rem; /* thickness of the line */
+  --m: .5; /* curvature of the wave [0 2] */
+  margin: 0;
+  padding: 0;
+  background: #7c8c03;
+  --R: calc(var(--s)*sqrt(var(--m)*var(--m) + 1) + var(--b)/2);
+  height: calc(2 * var(--R));
+  width: 100%;
+  --_g: #0000 calc(99% - var(--b)), #000 calc(101% - var(--b)) 99%, #0000 101%;
+  mask: radial-gradient(var(--R) at left 50% bottom calc(-1 * var(--m) * var(--s)), var(--_g)) calc(50% - 2 * var(--s)) calc(50% - var(--s) / 2 - var(--b) / 2)/calc(4 * var(--s)) calc(var(--s) + var(--b)) repeat-x, radial-gradient(var(--R) at left 50% top calc(-1 * var(--m) * var(--s)), var(--_g)) 50% calc(50% + var(--s) / 2 + var(--b) / 2)/calc(4 * var(--s)) calc(var(--s) + var(--b)) repeat-x;
+}
+
+@media (min-width: 768px) {
+  .content-footer {
+    padding-top: 1.5rem;
+  }
+}
+
+.navigation-footer {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+  gap: 1rem;
+}
+.navigation-footer a {
+  font-size: 1.7rem;
+}
+
+.copyright {
+  padding-top: 1rem;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1.5rem;
+}
+@media (min-width: 768px) {
+  .copyright {
+    padding-top: 0;
+  }
+}
+
+:root {
+  --total-time: 10s;
+  --coffe-delay: calc(var(--total-time) / 3.5);
+  --coffe-time: calc(var(--total-time) / 4);
+  --cup-delay: calc(var(--total-time) / 2.7);
+  --cup-time: calc(var(--total-time) / 3);
+  --under-delay: calc(var(--total-time) / 1.5);
+  --under-time: calc(var(--total-time) / 3.75);
+}
+
+.content-main {
+  padding: 1.5rem;
+  --r: 5rem;
+  height: auto;
+  border-radius: 2rem;
+  background-color: #BF7B3F;
+  mask: radial-gradient(var(--r) at var(--r), rgba(0, 0, 0, 0) calc(100% - 0.1rem), #000) calc(-1 * var(--r));
+}
+.content-main h1 {
+  margin: 2rem;
+  text-align: center;
+  color: #fdda00;
+  -webkit-text-stroke: 0.03rem #FFFFFF;
+  text-shadow: 0 2rem 3rem #fdda00;
+}
+@media (min-width: 768px) {
+  .content-main {
+    height: auto;
+  }
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .presentation {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .coffe-logo {
+    padding-left: 2rem;
+  }
+}
+.coffe-logo .container-coffe {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 4rem;
+  background: #FFFFFF;
+  box-shadow: 0 0.5rem 3rem rgb(199, 199, 199);
+}
+.coffe-logo .coffee {
+  fill: #d3935b;
+  opacity: 0;
+  animation: anim var(--coffe-time) linear var(--coffe-delay);
+  animation-fill-mode: forwards;
+}
+.coffe-logo .cup {
+  fill: #6aa1d1;
+  opacity: 0;
+  animation: anim var(--cup-time) linear var(--cup-delay);
+  animation-fill-mode: forwards;
+}
+.coffe-logo .under {
+  fill: #d3a5a5;
+  opacity: 0;
+  animation: anim var(--under-time) linear var(--under-delay);
+  animation-fill-mode: forwards;
+}
+.coffe-logo .line {
+  fill: none;
+  stroke-width: 1;
+  stroke: rgb(78, 78, 78);
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800;
+  animation: line var(--total-time) ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes anim {
+  to {
+    opacity: 1;
+  }
+}
+
+.presentation-info p {
+  color: #FFFFFF;
+  font-size: 1.7rem;
+  text-align: center;
+  padding-right: 2rem;
 }/*# sourceMappingURL=app.css.map */

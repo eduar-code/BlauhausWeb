@@ -2,7 +2,7 @@
 @use 'base/mixins' as m;
 
 :root {
-    --total-time: 10s;
+    --total-time: 7s;
     --coffe-delay: calc(var(--total-time) / 3.5);
     --coffe-time: calc(var(--total-time) / 4);
     --cup-delay: calc(var(--total-time) / 2.7);

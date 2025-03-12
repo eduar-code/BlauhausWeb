@@ -559,7 +559,7 @@ body > section {
 }
 
 :root {
-  --total-time: 10s;
+  --total-time: 7s;
   --coffe-delay: calc(var(--total-time) / 3.5);
   --coffe-time: calc(var(--total-time) / 4);
   --cup-delay: calc(var(--total-time) / 2.7);
@@ -656,4 +656,147 @@ body > section {
   font-size: 1.7rem;
   text-align: center;
   padding-right: 2rem;
+}
+
+.menu {
+  background-color: #7c8c03;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2rem;
+  box-shadow: 0 0.7rem 4rem #828281;
+}
+.menu h1 {
+  color: #BF7B3F;
+  text-align: center;
+  margin: 0;
+  padding: 2rem;
+  -webkit-text-stroke: 0.03rem #FFFFFF;
+  text-shadow: 0 2rem 3rem #fdda00;
+}
+
+.content-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 2rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .content-menu {
+    flex-direction: row;
+  }
+}
+.content-menu .menu-images {
+  max-width: 60rem;
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 15rem);
+  grid-template-rows: repeat(2, 15rem);
+  gap: 2rem;
+  position: relative;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .content-menu .menu-images {
+    grid-template-columns: repeat(2, 20rem);
+    grid-template-rows: repeat(2, 15rem);
+    padding: 2rem;
+  }
+}
+.content-menu .menu-images .image {
+  flex: 0 0 50%;
+  position: relative;
+}
+.content-menu .menu-images .image:nth-of-type(1) {
+  background: url("/build/img/gallery/full/panke.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat 50% 50%/cover;
+}
+.content-menu .menu-images .image:nth-of-type(1):after {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: transparent;
+  transform: scale(0.9);
+  outline: 5px solid white;
+}
+.content-menu .menu-images .image:nth-of-type(2) {
+  background: url("/build/img/gallery/full/sanw.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat 50% 50%/cover;
+}
+.content-menu .menu-images .image:nth-of-type(2):after {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: transparent;
+  transform: scale(0.9);
+  outline: 5px solid white;
+}
+.content-menu .menu-images .image:nth-of-type(3) {
+  background: url("/build/img/gallery/full/blah2.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat 50% 50%/cover;
+}
+.content-menu .menu-images .image:nth-of-type(3):after {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: transparent;
+  transform: scale(0.9);
+  outline: 5px solid white;
+}
+.content-menu .menu-images .image:nth-of-type(4) {
+  background: url("/build/img/gallery/full/panke.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat 50% 50%/cover;
+}
+.content-menu .menu-images .image:nth-of-type(4):after {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: transparent;
+  transform: scale(0.9);
+  outline: 5px solid white;
+}
+.content-menu .menu-images svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.content-menu .menu-images svg .path-one {
+  fill: rgba(255, 255, 255, 0.8901960784);
+}
+.content-menu .menu-images span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ccbc9d;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 180px;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+.content-menu .menu-info {
+  padding: 2.5rem;
+}
+.content-menu .menu-info p {
+  color: #FFFFFF;
+  padding-bottom: 2rem;
+}
+.content-menu .menu-info a {
+  color: #fdda00;
+}
+.content-menu .menu-info a:hover {
+  font-size: 3rem;
 }/*# sourceMappingURL=app.css.map */

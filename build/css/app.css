@@ -326,7 +326,6 @@ body {
   color: #000000;
   font-size: 2rem;
   background-color: #FFFFFF;
-  background-color: #162737;
 }
 body.overflow-hidden {
   overflow: hidden;
@@ -396,39 +395,89 @@ body > section {
   max-width: 80rem;
 }
 
-.header {
+@media (min-width: 770px) {
+  .header {
+    min-height: 30rem;
+  }
+}
+
+.header-body {
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+  position: relative;
+}
+@media (min-width: 770px) {
+  .header-body {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 40rem;
+    position: relative;
+    z-index: 0;
+  }
+}
+.header-body_banner {
   background-image: url(../img/gallery/full/placep.png);
   background-color: rgba(23, 23, 23, 0.6);
   background-blend-mode: overlay;
   background-position: center center;
   background-size: cover;
-  box-shadow: 0 0.7rem 4rem #828281;
+  width: auto;
+  height: 22rem;
 }
 @media (min-width: 770px) {
-  .header {
-    min-height: 45rem;
+  .header-body_banner {
+    width: 60%;
+    height: auto;
+    position: relative;
+    border-radius: 40% 60% 100% 0%/0% 100% 0% 100%;
+  }
+}
+.header-body_presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  --s: 7.8rem;
+  --c1: #dad8d8;
+  --c2: #bababa;
+  --_s: calc(2*var(--s)) calc(2*var(--s));
+  --_g: 35.36% 35.36% at;
+  --_c: #0000 66%, var(--c2) 68% 70%, #0000 72%;
+  background: radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s)/var(--_s), radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s)/var(--_s), radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0/var(--_s), radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0/var(--_s), repeating-conic-gradient(var(--c1) 0 25%, rgba(0, 0, 0, 0) 0 50%) 0 0/var(--_s), radial-gradient(var(--_c)) 0 calc(var(--s) / 2)/var(--s) var(--s) var(--c1);
+}
+.header-body_presentation h1 {
+  margin: 0;
+  padding: 4rem 0rem 0rem 0rem;
+  text-align: center;
+}
+.header-body_presentation p {
+  margin: 0;
+  padding: 2rem 1rem 3rem 0rem;
+  text-align: center;
+  font-size: 1.3rem;
+}
+@media (min-width: 770px) {
+  .header-body_presentation {
+    z-index: -1;
+    position: absolute;
+    height: 40rem;
+    padding-top: 10rem;
+  }
+  .header-body_presentation h1 {
+    padding: 5rem 0rem 0rem 60%;
+  }
+  .header-body_presentation p {
+    padding: 2rem 1rem 0rem 60%;
   }
 }
 
-.container-header {
+.container-header_nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-.container-header p {
-  text-align: center;
-  color: #FFFFFF;
-  font-weight: bold;
-  margin: 0;
-  padding: 1.5rem;
-  font-size: 1.2rem;
-}
-@media (min-width: 770px) {
-  .container-header p {
-    font-size: 2rem;
-    width: 60rem;
-    padding: 30rem 2rem 2rem 10rem;
-  }
+  position: absolute;
+  width: 100%;
 }
 
 .nav-bar {
@@ -438,16 +487,22 @@ body > section {
   background-color: rgba(124, 140, 3, 0.5137254902);
   height: auto;
   width: 100%;
+  position: sticky;
 }
 @media (min-width: 770px) {
   .nav-bar {
+    background-color: transparent;
     flex-direction: row;
-    box-shadow: 0.5rem 2rem 2rem #333;
+    box-shadow: 0.5rem 0.1rem 5rem #333;
+    position: fixed;
+    z-index: 2;
   }
 }
 .nav-bar h1 {
   text-align: center;
-  color: #FFFFFF;
+  color: #733A26;
+  -webkit-text-stroke: 0.03rem #FFFFFF;
+  text-shadow: 0 0.1rem 1rem #fdda00;
   font-weight: bold;
   margin: 0;
   padding: 1rem;
@@ -469,7 +524,7 @@ body > section {
 @media (min-width: 770px) {
   .navigation-header {
     flex-direction: row;
-    gap: 10rem;
+    gap: 5rem;
     padding: 2rem 7rem 2rem 0rem;
     margin: 0;
     float: right;
@@ -477,12 +532,22 @@ body > section {
 }
 .navigation-header a {
   color: #FFFFFF;
+  font-weight: bold;
+  -webkit-text-stroke: 0.03rem #7c8c03;
+  text-shadow: 0 0.1rem 1rem #7c8c03;
   font-size: 2rem;
   margin: 0;
   padding: 0;
 }
 .navigation-header a:hover, .navigation-header a.active {
-  color: #fdda00;
+  color: #BF7B3F;
+}
+@media (min-width: 770px) {
+  .navigation-header a {
+    color: #733A26;
+    -webkit-text-stroke: 0.03rem #162737;
+    text-shadow: 0 0.1rem 1rem #7c8c03;
+  }
 }
 
 .navigation-footer {

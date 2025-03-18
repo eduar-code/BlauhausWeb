@@ -1,3 +1,29 @@
+document.addEventListener('DOMContentLoaded', function () {
+
+  eventListeners();
+  //darkMode();
+});
+
+
+
+
+function eventListeners(){
+  const mobileMenu = document.querySelector('.mobile-menu');
+  mobileMenu.addEventListener('click', navegationResponsive);
+}
+
+function navegationResponsive(){
+  const navegation = document.querySelector('.navigation-option');
+
+  if(navegation.classList.contains('show')){
+    navegation.classList.remove('show');
+  }else{
+    navegation.classList.add('show');
+  }
+}
+
+
+
 // let slideIndex = 0;
 // showSlides();
 

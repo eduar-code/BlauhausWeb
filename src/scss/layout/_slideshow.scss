@@ -7,7 +7,7 @@
 
 .viewImage {
     //background-color: v.$transpgrey;
-    border-radius: 5rem;
+    border-radius: 2rem;
     padding: 0;
     height: 100%;
 }
@@ -28,8 +28,8 @@
         height: 35rem;
         width: 100%;
         object-fit: cover;
-        border-radius: 10rem;
-        box-shadow: 0 .1rem 1rem .1rem v.$yellow;
+        border-radius: 3rem;
+        box-shadow: 0 .1rem 1rem 1rem v.$grayBla;
     }
 }
 

@@ -4,8 +4,9 @@
 .footer {
     display: flex;
     flex-direction: column;
-    background-color: v.$coffeBla;
+    background-color: v.$textTitleLow;
     margin-bottom: 0;
+    box-shadow: 0rem -.3rem 2rem v.$textShadowT;
 }
 
 
@@ -18,7 +19,7 @@
     /* curvature of the wave [0 2] */
     margin: 0;
     padding: 0;
-    background: v.$greenOpacity;
+    background: v.$backgroundColorL;
     --R: calc(var(--s)*sqrt(var(--m)*var(--m) + 1) + var(--b)/2);
     height: calc(2*var(--R));
     width: 100%;
@@ -40,9 +41,19 @@
     opacity: 1;
     height: auto;
     gap: 1rem;
+    padding-top: 2rem;
 
     a {
         font-size: 1.7rem;
+        &:hover,
+        &.active {
+            color: v.$textInfo;
+        }
+    }
+
+    
+    @include m.tablet{
+        gap: 3rem;
     }
 }
 

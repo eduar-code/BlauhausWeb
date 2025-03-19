@@ -19,11 +19,12 @@ body {
     font-size: 2rem;
 
     //
-    background-color: v.$white;
+    //background-color: v.$white;
     //background-color: v.$blueBla;
     //background: linear-gradient(to top, v.$blueBla 0%, v.$white 100%);
+    background: linear-gradient(to top, v.$backgroundColorT 0%, v.$backgroundColorL 100%);
 
-    //background: linear-gradient(v.$blueBla, v.$white);
+    //background: linear-gradient(v.$coffeBla, v.$coffelow);
 
     &.overflow-hidden{
         overflow: hidden;

@@ -1,0 +1,84 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.content-main_menu {
+    padding: 1.5rem;
+    height: auto;
+    border-radius: 2rem;
+    background-color: v.$white;
+    box-shadow: 0 1rem 2rem v.$opacitygrey;
+
+    h1 {
+        margin: 2rem;
+        text-align: center;
+        color: v.$textTitle;
+        -webkit-text-stroke: .02rem v.$backgroundColorL;
+        text-shadow: 0 .5rem 1.5rem v.$backgroundColorT;
+
+    }
+
+    @include m.tablet {
+        height: auto;
+    }
+
+    // &_order {
+    //     display: flex;
+    //     flex-direction: column;
+    //     margin-top: 4rem;
+    //     padding-bottom: 2rem;
+    //     gap: 2.5rem;
+
+    //     @include m.tablet {
+    //         flex-direction: row;
+    //         margin-top: 7rem;
+    //         gap: 5rem;
+
+    //     }
+    // }
+
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 2rem;
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    @include m.tablet {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        gap: 2rem;
+    }
+
+}
+
+.desayunos {
+    &-info {
+        li {
+            // width: auto;
+            color: v.$textTitle;
+            text-transform: uppercase;
+        }
+
+        p {
+            text-transform: capitalize;
+            color: v.$textInfo;
+            font-size: 1.2rem;
+            margin: 0;
+            padding-right: 5rem;
+        }
+    }
+}
+
+.style_menu {
+    background-color: v.$backgroundColorL;
+    border-radius: 2rem;
+    box-shadow: 0rem .1rem 1rem v.$textTitleLow;
+    height: 30rem;
+
+}

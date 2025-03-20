@@ -21,22 +21,6 @@
     @include m.tablet {
         height: auto;
     }
-
-    // &_order {
-    //     display: flex;
-    //     flex-direction: column;
-    //     margin-top: 4rem;
-    //     padding-bottom: 2rem;
-    //     gap: 2.5rem;
-
-    //     @include m.tablet {
-    //         flex-direction: row;
-    //         margin-top: 7rem;
-    //         gap: 5rem;
-
-    //     }
-    // }
-
 }
 
 .menu {
@@ -50,35 +34,49 @@
     }
 
     @include m.tablet {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(7, 1fr);
         gap: 2rem;
     }
 
 }
 
-.desayunos {
-    &-info {
+.produc-price {
+    &_info {
         li {
-            // width: auto;
+            //list-style: none;
             color: v.$textTitle;
             text-transform: uppercase;
+            padding-bottom: .2rem;
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                h2{
+                    margin: 0;
+                    font-size: 1.2rem;
+                }
+                p{
+                    margin: 0;
+                    color: v.$textTitle;
+                    font-weight: 900;
+                    font-size: 1.4rem;
+                    padding-right: 2rem;
+                }
+            }
         }
-
         p {
             text-transform: capitalize;
-            color: v.$textInfo;
-            font-size: 1.2rem;
+            color: v.$textTitle;
+            font-size: 1.1rem;
             margin: 0;
-            padding-right: 5rem;
+            padding-right: 1.5rem;
         }
     }
 }
 
 .style_menu {
-    background-color: v.$backgroundColorL;
+    background-color: v.$colorMenubackL;
     border-radius: 2rem;
     box-shadow: 0rem .1rem 1rem v.$textTitleLow;
-    height: 30rem;
-
 }

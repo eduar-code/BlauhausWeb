@@ -469,7 +469,7 @@ body > section {
   text-align: center;
 }
 .header-body_presentation p {
-  color: #7e8d99;
+  color: #55616A;
   text-shadow: #5b5b5c 0.1rem 0 0.1rem;
   margin: 0;
   padding: 2rem 1rem 0rem 0rem;
@@ -594,7 +594,7 @@ body > section {
   text-shadow: #5b5b5c 0.1rem 0 0.1rem;
 }
 .navigation-option a:hover, .navigation-option a.active {
-  color: #7e8d99;
+  color: #55616A;
 }
 @media (min-width: 770px) {
   .navigation-option a {
@@ -695,7 +695,7 @@ body > section {
   font-size: 1.7rem;
 }
 .navigation-footer a:hover, .navigation-footer a.active {
-  color: #7e8d99;
+  color: #55616A;
 }
 @media (min-width: 770px) {
   .navigation-footer {
@@ -777,7 +777,7 @@ body > section {
 .presentation-info p {
   margin: 0;
   padding: 2rem;
-  color: #7e8d99;
+  color: #55616A;
   font-size: 1.7rem;
   text-align: center;
 }
@@ -963,29 +963,45 @@ body > section {
 }
 @media (min-width: 770px) {
   .menu {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(7, 1fr);
     gap: 2rem;
   }
 }
 
-.desayunos-info li {
+.produc-price_info li {
   color: #364351;
   text-transform: uppercase;
+  padding-bottom: 0.2rem;
 }
-.desayunos-info p {
-  text-transform: capitalize;
-  color: #7e8d99;
-  font-size: 1.2rem;
+.produc-price_info li div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.produc-price_info li div h2 {
   margin: 0;
-  padding-right: 5rem;
+  font-size: 1.2rem;
+}
+.produc-price_info li div p {
+  margin: 0;
+  color: #364351;
+  font-weight: 900;
+  font-size: 1.4rem;
+  padding-right: 2rem;
+}
+.produc-price_info p {
+  text-transform: capitalize;
+  color: #364351;
+  font-size: 1.1rem;
+  margin: 0;
+  padding-right: 1.5rem;
 }
 
 .style_menu {
-  background-color: #cbd4dd;
+  background-color: #C9D5DF;
   border-radius: 2rem;
   box-shadow: 0rem 0.1rem 1rem #657d94;
-  height: 30rem;
 }
 
 * {

@@ -1,27 +1,61 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  eventListeners();
+  eventListenersNav();
+  eventListenersMenu();
   //darkMode();
 });
 
 
 
 
-function eventListeners(){
+function eventListenersNav() {
   const mobileMenu = document.querySelector('.mobile-menu');
-  mobileMenu.addEventListener('click', navegationResponsive);
+  mobileMenu.addEventListener('click', navegationResponsiveNav);
 }
 
-function navegationResponsive(){
+function navegationResponsiveNav() {
   const navegation = document.querySelector('.navigation-option');
 
-  if(navegation.classList.contains('show')){
+  if (navegation.classList.contains('show')) {
     navegation.classList.remove('show');
-  }else{
+  } else {
     navegation.classList.add('show');
   }
+
+  //navegacion.classList.toggle('mostrar');
 }
 
+
+
+function eventListenersMenu() {
+  const products = document.querySelectorAll('.mobile-menu_v');
+ //products.addEventListener('click', navegationResponsiveMenu);
+
+ products.forEach(products => {
+  products.addEventListener('click', () => {
+    const targetDiv = document.getElementById(products.dataset.target);
+    console.log(targetDiv);
+    if(targetDiv.classList.contains('showMenu')){
+      targetDiv.classList.remove('showMenu');
+    }else{
+      targetDiv.classList.add('showMenu');
+    }
+
+  });
+ });
+ 
+}
+
+
+// function navegationResponsiveMenu() {
+//   const navegacionMenu = document.querySelector('.produc-price_info');
+
+//   if(navegacionMenu.classList.contains('showMenu')){
+//     navegacionMenu.classList.remove('showMenu');
+//   }else{
+//     navegacionMenu.classList.add('showMenu');
+//   }
+// }
 
 
 // let slideIndex = 0;
@@ -56,14 +90,14 @@ function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }

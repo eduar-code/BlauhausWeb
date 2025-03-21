@@ -2,31 +2,48 @@
 @use 'base/mixins' as m;
 
 
-.content-main_menu {
+
+.content-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    &_logo {
+        img {
+            width: 10rem;
+        }
+    }
+}
+
+.content-menu {
     padding: 1.5rem;
-    height: auto;
+    //height:auto;
     border-radius: 2rem;
     background-color: v.$white;
     box-shadow: 0 1rem 2rem v.$opacitygrey;
 
     h1 {
         margin: 2rem;
+        padding-bottom: 2rem;
         text-align: center;
         color: v.$textTitle;
         -webkit-text-stroke: .02rem v.$backgroundColorL;
         text-shadow: 0 .5rem 1.5rem v.$backgroundColorT;
-
     }
 
     @include m.tablet {
-        height: auto;
+        //height: auto;
     }
 }
 
 .menu {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
 
     h1 {
@@ -34,29 +51,78 @@
     }
 
     @include m.tablet {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(7, 1fr);
+        flex-direction: row;
+    }
+
+    &-order {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%; //
         gap: 2rem;
     }
 
 }
 
+.content-menu_back {
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
+    background-color: v.$colorMenubackL;
+    padding-top: 1rem;
+    // padding-bottom: 1rem;
+    box-shadow: 0 .1rem .7rem v.$colorMenubackT;
+    align-items: center;
+
+    .logo-menu {
+        padding-top: 3rem;
+
+        img {
+            width: 20rem;
+        }
+    }
+}
+
 .produc-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        margin-bottom: 0;
+        padding-bottom: 0.7rem;
+    }
+
     &_info {
+
+        visibility: hidden; //para el menu hamburge
+        opacity: 0;
+        height: 0;
+        transition: visibility .3s ease-in-out, opacity 0.5s linear, height .5s linear; //
+
+        @include m.tablet {
+            opacity: 1; //
+            visibility: visible; //
+            height: auto;
+            // padding-bottom: 5rem;
+        }
+
         li {
             //list-style: none;
             color: v.$textTitle;
             text-transform: uppercase;
             padding-bottom: .2rem;
+
             div {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                h2{
+
+                h2 {
                     margin: 0;
                     font-size: 1.2rem;
                 }
-                p{
+
+                p {
                     margin: 0;
                     color: v.$textTitle;
                     font-weight: 900;
@@ -65,6 +131,7 @@
                 }
             }
         }
+
         p {
             text-transform: capitalize;
             color: v.$textTitle;
@@ -73,10 +140,52 @@
             padding-right: 1.5rem;
         }
     }
+
+    .info {
+        color: v.$textTitle;
+        font-size: 1.5rem;
+        font-weight: 900;
+        text-transform: capitalize;
+    }
 }
 
 .style_menu {
     background-color: v.$colorMenubackL;
     border-radius: 2rem;
     box-shadow: 0rem .1rem 1rem v.$textTitleLow;
+}
+
+.style_menuIn {
+    background-color: v.$colorMenubackT;
+    border-radius: 2rem;
+    box-shadow: 0rem .1rem 1rem v.$textTitleLow;
+
+    p {
+        padding: 1rem;
+    }
+}
+
+.showMenuIn {
+    visibility: visible;
+    opacity: 1;
+    height: 100%;
+    //padding: 1rem 0rem 2rem;
+    padding: 0;
+}
+
+.showMenu {
+    visibility: visible;
+    opacity: 1;
+    height: 100%;
+    padding: 1rem 0rem 2rem;
+}
+
+.mobile-menu_v {
+    @include m.tablet {
+        display: none;
+    }
+
+    img {
+        width: 4rem;
+    }
 }

@@ -69,15 +69,17 @@
     border-radius: 2rem;
     background-color: v.$colorMenubackL;
     padding-top: 1rem;
-    // padding-bottom: 1rem;
     box-shadow: 0 .1rem .7rem v.$colorMenubackT;
-    align-items: center;
-
+    
     .logo-menu {
+        display: flex;
+        flex-direction: column;
         padding-top: 3rem;
-
+        align-items: center;
+        
         img {
             width: 20rem;
+            
         }
     }
 }
@@ -90,20 +92,20 @@
     h1 {
         margin-bottom: 0;
         padding-bottom: 0.7rem;
+        font-size:2.5rem;
     }
 
     &_info {
-
         visibility: hidden; //para el menu hamburge
         opacity: 0;
         height: 0;
-        transition: visibility .3s ease-in-out, opacity 0.5s linear, height .5s linear; //
+        width: 100%; //
+        transition: visibility .3s ease-in-out, opacity 0.5s linear, height .3s linear; //
 
         @include m.tablet {
             opacity: 1; //
             visibility: visible; //
             height: auto;
-            // padding-bottom: 5rem;
         }
 
         li {
@@ -116,10 +118,11 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                gap: 5rem; //
 
                 h2 {
                     margin: 0;
-                    font-size: 1.2rem;
+                    font-size: 1.4rem;
                 }
 
                 p {
@@ -130,12 +133,17 @@
                     padding-right: 2rem;
                 }
             }
+
+
+            span {
+                font-size: 1rem;
+            }
         }
 
         p {
             text-transform: capitalize;
             color: v.$textTitle;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin: 0;
             padding-right: 1.5rem;
         }
@@ -146,6 +154,7 @@
         font-size: 1.5rem;
         font-weight: 900;
         text-transform: capitalize;
+        width: 90%;
     }
 }
 
@@ -169,8 +178,8 @@
     visibility: visible;
     opacity: 1;
     height: 100%;
-    //padding: 1rem 0rem 2rem;
-    padding: 0;
+    //width: 100%;
+    padding: 0rem 1rem;
 }
 
 .showMenu {

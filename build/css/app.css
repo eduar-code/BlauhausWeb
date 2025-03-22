@@ -599,7 +599,7 @@ body > section {
     font-size: 1.8rem;
   }
   .navigation-option a:last-of-type {
-    margin-right: 7rem;
+    margin-right: 5rem;
   }
 }
 
@@ -981,10 +981,12 @@ body > section {
   background-color: #C9D5DF;
   padding-top: 1rem;
   box-shadow: 0 0.1rem 0.7rem #95acb9;
-  align-items: center;
 }
 .content-menu_back .logo-menu {
+  display: flex;
+  flex-direction: column;
   padding-top: 3rem;
+  align-items: center;
 }
 .content-menu_back .logo-menu img {
   width: 20rem;
@@ -998,12 +1000,14 @@ body > section {
 .produc-price h1 {
   margin-bottom: 0;
   padding-bottom: 0.7rem;
+  font-size: 2.5rem;
 }
 .produc-price_info {
   visibility: hidden;
   opacity: 0;
   height: 0;
-  transition: visibility 0.3s ease-in-out, opacity 0.5s linear, height 0.5s linear;
+  width: 100%;
+  transition: visibility 0.3s ease-in-out, opacity 0.5s linear, height 0.3s linear;
 }
 @media (min-width: 770px) {
   .produc-price_info {
@@ -1021,10 +1025,11 @@ body > section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 5rem;
 }
 .produc-price_info li div h2 {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 .produc-price_info li div p {
   margin: 0;
@@ -1033,10 +1038,13 @@ body > section {
   font-size: 1.4rem;
   padding-right: 2rem;
 }
+.produc-price_info li span {
+  font-size: 1rem;
+}
 .produc-price_info p {
   text-transform: capitalize;
   color: #364351;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin: 0;
   padding-right: 1.5rem;
 }
@@ -1045,6 +1053,7 @@ body > section {
   font-size: 1.5rem;
   font-weight: 900;
   text-transform: capitalize;
+  width: 90%;
 }
 
 .style_menu {
@@ -1066,7 +1075,7 @@ body > section {
   visibility: visible;
   opacity: 1;
   height: 100%;
-  padding: 0;
+  padding: 0rem 1rem;
 }
 
 .showMenu {

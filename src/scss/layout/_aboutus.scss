@@ -1,0 +1,82 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.content-main_about {
+    padding: 1.5rem;
+    height: auto;
+    border-radius: 2rem;
+    background-color: v.$white;
+    box-shadow: 0 1rem 2rem v.$opacitygrey;
+    gap: 1.5rem 3rem;
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    h1 {
+        margin: 2rem;
+        padding-bottom: 2rem;
+        text-align: center;
+        color: v.$textTitle;
+        -webkit-text-stroke: .02rem v.$backgroundColorL;
+        text-shadow: 0 .5rem 1.5rem v.$backgroundColorT;
+    }
+
+    @include m.tablet {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        .aboutus {
+            grid-column: 1 / 3;
+        }
+
+        .mision {
+            grid-row-start: 2;
+        }
+
+        .vision {
+            grid-row-start: 2;
+        }
+    }
+
+}
+
+.aboutus {
+    p {
+        font-size: 1.7rem;
+        text-transform: capitalize;
+        text-align: justify;
+        margin: 0;
+
+        &:last-of-type {
+            margin-top: 1rem;
+            color: v.$textTitleLow;
+            font-weight: 900;
+            text-align: center;
+            padding-bottom: 2.5rem;
+
+            @include m.tablet {
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+.mision,
+.vision {
+    p {
+        font-size: 1.7rem;
+        text-transform: capitalize;
+        text-align: justify;
+    }
+}
+
+
+.aboutus,
+.vision,
+.mision {
+    padding: 0rem 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 .1rem 1rem v.$grayBla;
+}
+

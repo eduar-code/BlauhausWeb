@@ -10,6 +10,9 @@
         href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="build/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>BlauHaus</title>
 </head>
 
@@ -62,15 +65,26 @@
         </div>
     </header>
 
-    <main class="content-main seccion container">
-        <div class="content-main_info">
-            <h1>Disfruta de lo mejor</h1>
-            <p> Aqui encontraras comido para todos los gusto, ya que se cuenta con platillos de sabores diferentes,
-                ademas de que nuestro menu es 100% vegano</p>
+    <main class="content-main_menu seccion container">
+        <div class="content-main_menu_info">
+            <p>
+                Todos nustros alimentos se elaboran con ingredientes frescos y al memento. agradecemos tu preferencia
+                mientras realizamos tu pedido.
+            </p>
+            <picture class="content-main_menu_logo">
+                <img src="build/img/gallery/full/Logo2.avif" alt="">
+            </picture>
         </div>
-        <picture class="content-main_logo">
-            <img src="build/img/gallery/full/Logo2.avif" alt="">
-        </picture>
+        <div class="content-main_menu_torders">
+            <h1>¡Adelanta Tu Pedido!</h1>
+            <div>
+                <a class="fa-brands fa-whatsapp content-main_menu_icons">: 443 734 63 85</a>
+                <a href="https://www.facebook.com/blauhauscafemx/"
+                    class="fa-brands fa-facebook content-main_menu_icons">@BlauHauscafeMX</a>
+                <a href="https://www.instagram.com/blauhausmx/"
+                    class="fa-brands fa-instagram content-main_menu_icons">@BlauHausMX</a>
+            </div>
+        </div>
     </main>
 
     <section class="content-menu seccion container">
@@ -158,18 +172,6 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="produc-price style_menuIn">
-                        <h1>Toppings</h1>
-                        <div class="produc-price_info showMenuIn">
-                            <p>jarabe de chocolate, miel de agave, leche condensada vegetal casera, mermelada casera,
-                                crema batida vegetal, fruta de temporada</p>
-
-                            <p>cacahuate, girasol, ajonjoli, chia, arandano deshidratado, coco rayado, pasas, granola
-                            </p>
-
-                            <p>especiles(equivalente a 2 toppings): crema de cacahuate, chispas de chocolate oscuro</p>
-                        </div>
-                    </div>
                     <div class="produc-price style_menu">
                         <h1>Wafles Salados</h1>
                         <div class="mobile-menu_v" data-target="wafless">
@@ -221,8 +223,16 @@
                 </div>
                 <div class="menu-order">
                     <div class="produc-price style_menuIn">
-                        <p class="info">Todos nustros alimentos se elaboran con ingredientes frescos y al memento.
-                            agradecemos tu preferencia mientras realizamos tu pedido. </p>
+                        <h1>Toppings</h1>
+                        <div class="produc-price_info showMenuIn">
+                            <p>jarabe de chocolate, miel de agave, leche condensada vegetal casera, mermelada casera,
+                                crema batida vegetal, fruta de temporada</p>
+
+                            <p>cacahuate, girasol, ajonjoli, chia, arandano deshidratado, coco rayado, pasas, granola
+                            </p>
+
+                            <p>especiles(equivalente a 2 toppings): crema de cacahuate, chispas de chocolate oscuro</p>
+                        </div>
                     </div>
                     <div class="produc-price style_menu">
                         <h1>Alimentos Ligeros</h1>
@@ -414,7 +424,8 @@
                         <div class="produc-price_info" id="wraps"> <!-- Aqui los producto de la seccion-->
                             <ul>
                                 <li style="list-style: none; padding-bottom: 2rem;">
-                                    <P>tortilla de harina, mayonesa vegetal casera, lechuga, espinacas, germinado y relleno a elegir</P>
+                                    <P>tortilla de harina, mayonesa vegetal casera, lechuga, espinacas, germinado y
+                                        relleno a elegir</P>
                                 </li>
                                 <li>
                                     <div>
@@ -428,7 +439,8 @@
                                         <h2>hawaiano</h2>
                                         <p>$70.00</p>
                                     </div>
-                                    <P>jamon de trigo, salchicha de tofu, piña asada, queso de papa, queso tipo mozzarella y cheddar vegetal</P>
+                                    <P>jamon de trigo, salchicha de tofu, piña asada, queso de papa, queso tipo
+                                        mozzarella y cheddar vegetal</P>
                                 </li>
                                 <li>
                                     <div>
@@ -442,7 +454,8 @@
                                         <h2>champiñones salteados</h2>
                                         <p>$70.00</p>
                                     </div>
-                                    <P>champiñones salteados con especias, cebolla asada, hummus casero y aguacate fresco</P>
+                                    <P>champiñones salteados con especias, cebolla asada, hummus casero y aguacate
+                                        fresco</P>
                                 </li>
                                 <li>
                                     <div>
@@ -465,7 +478,8 @@
                         <h1>Desechables</h1>
                         <div class="produc-price_info showMenuIn"> <!-- Aqui los producto de la seccion-->
                             <ul style="margin-top: 0;">
-                                    <P style="padding: .2rem 2rem;">buscamos reducir el uso de desechables por ello se cobraran aparte</P>
+                                <P style="padding: .2rem 2rem;">buscamos reducir el uso de desechables por ello se
+                                    cobraran aparte</P>
                                 <li>
                                     <div>
                                         <h2>bandeja termica</h2>
@@ -501,21 +515,24 @@
                                         <h2>galleta de avena</h2>
                                         <p>$20.00</p>
                                     </div>
-                                    <P>galletita individual hechas con avena, harina de trigo, canela, coco rayado y frutos secos</P>
+                                    <P>galletita individual hechas con avena, harina de trigo, canela, coco rayado y
+                                        frutos secos</P>
                                 </li>
                                 <li>
                                     <div>
                                         <h2>galleta de chocochispas</h2>
                                         <p>$20.00</p>
                                     </div>
-                                    <P>galletita individual hechas con avena, harina de trigo, canela, vainilla, cacao en polvo y chispas de chocolate</P>
+                                    <P>galletita individual hechas con avena, harina de trigo, canela, vainilla, cacao
+                                        en polvo y chispas de chocolate</P>
                                 </li>
                                 <li>
                                     <div>
                                         <h2>panque casero</h2>
                                         <p>$25.00</p>
                                     </div>
-                                    <P>panque casero hecho con harina de trigo, platano, canela (pregunta disponibilidad de sabores)</P>
+                                    <P>panque casero hecho con harina de trigo, platano, canela (pregunta disponibilidad
+                                        de sabores)</P>
                                 </li>
                                 <li>
                                     <div>
@@ -527,7 +544,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="produc-price style_menuIn" > <!-- Aqui empieza la seccion de un producto-->
+                    <div class="produc-price style_menuIn"> <!-- Aqui empieza la seccion de un producto-->
                         <h1>Acompañamientos Extras</h1>
                         <!-- <div class="mobile-menu_v" data-target="postres">
                             <img src="build/img/gallery/full/barras.svg" alt="icono menu responsive">
@@ -539,7 +556,8 @@
                                         <h2>ensaladita</h2>
                                         <p style="padding: 0rem 2rem 0rem 0rem;">$20.00</p>
                                     </div>
-                                    <P style="padding: 0rem;">lechuga, espinaca, jitomate, manzana, pepino y germinado</P>
+                                    <P style="padding: 0rem;">lechuga, espinaca, jitomate, manzana, pepino y germinado
+                                    </P>
                                 </li>
                                 <li>
                                     <div>
@@ -575,14 +593,16 @@
                                         <h2>paquete 2</h2>
                                         <p>$100.00</p>
                                     </div>
-                                    <P>Te helado<br> sandwich/crepa/waffles de ensalada de garbanzo o jamon y queso <br> Acompañamiento extra <br> postre</P>
+                                    <P>Te helado<br> sandwich/crepa/waffles de ensalada de garbanzo o jamon y queso <br>
+                                        Acompañamiento extra <br> postre</P>
                                 </li>
                                 <li>
                                     <div>
                                         <h2>paquete 3</h2>
                                         <p>$110.00</p>
                                     </div>
-                                    <P>Te helado <br> sandwich o waffles de salchicha y queso o de guacamole <br> Acompañamiento extra <br> postre</P>
+                                    <P>Te helado <br> sandwich o waffles de salchicha y queso o de guacamole <br>
+                                        Acompañamiento extra <br> postre</P>
                                 </li>
                                 <li>
                                     <div>
@@ -766,7 +786,7 @@
                         </div>
                     </div>
                     <div class="produc-price style_menuIn">
-                        <div class="produc-price_info showMenuIn" >
+                        <div class="produc-price_info showMenuIn">
                             <ul>
                                 <li>
                                     <div>
@@ -854,7 +874,7 @@
                                         <p>$60.00</p>
                                     </div>
                                 </li>
-                               
+
                             </ul>
                         </div>
                     </div>
@@ -910,6 +930,13 @@
                 <a href="contact.html">Contact</a>
                 <a href="games.html">Games</a>
             </nav>
+            <div class="social-media">
+                <a class="fa-brands fa-whatsapp content-main_menu_icons">: 443 734 63 85</a>
+                <a href="https://www.facebook.com/blauhauscafemx/"
+                    class="fa-brands fa-facebook content-main_menu_icons">@BlauHauscafeMX</a>
+                <a href="https://www.instagram.com/blauhausmx/"
+                    class="fa-brands fa-instagram content-main_menu_icons">@BlauHausMX</a>
+            </div>
         </div>
         <p class="copyright">Todos los derechos Reservados 2025 &copy;</p>
     </footer>

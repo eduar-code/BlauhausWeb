@@ -7,11 +7,30 @@
     border-radius: 2rem;
     background-color: v.$white;
     box-shadow: 0 1rem 2rem v.$opacitygrey;
-    gap: 1.5rem 3rem;
 
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    &_order {
+        gap: 1.5rem 3rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+
+        @include m.tablet {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+    
+            .aboutus {
+                grid-column: 1 / 3;
+            }
+    
+            .mision {
+                grid-row-start: 2;
+            }
+    
+            .vision {
+                grid-row-start: 2;
+            }
+        }
+    }
 
     h1 {
         margin: 2rem;
@@ -20,31 +39,14 @@
         color: v.$textTitle;
         -webkit-text-stroke: .02rem v.$backgroundColorL;
         text-shadow: 0 .5rem 1.5rem v.$backgroundColorT;
-    }
-
-    @include m.tablet {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-
-        .aboutus {
-            grid-column: 1 / 3;
-        }
-
-        .mision {
-            grid-row-start: 2;
-        }
-
-        .vision {
-            grid-row-start: 2;
-        }
-    }
+    }  
 
 }
 
 .aboutus {
     p {
         font-size: 1.7rem;
-        text-transform: capitalize;
+        text-transform: none;
         text-align: justify;
         margin: 0;
 
@@ -66,7 +68,7 @@
 .vision {
     p {
         font-size: 1.7rem;
-        text-transform: capitalize;
+        text-transform: none;
         text-align: justify;
     }
 }
@@ -80,3 +82,21 @@
     box-shadow: 0 .1rem 1rem v.$grayBla;
 }
 
+.about_logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0rem 2rem 0rem;
+
+    img {
+        width: 20rem;
+    }
+}
+
+.contento-imgs{
+    background-color: v.$white;
+    height: auto;
+    border-radius: 2rem;
+    background-color: v.$white;
+    box-shadow: 0 1rem 2rem v.$opacitygrey;
+}

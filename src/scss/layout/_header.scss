@@ -14,7 +14,6 @@
 
         @include m.tablet {
             width: 20rem;
-            //height: 20%;
             padding: 1rem 0rem  0rem 5rem;
         }
     }
@@ -24,11 +23,10 @@
     display: flex;
     flex-direction: column;
 
-
     @include m.tablet {
         flex-direction: row;
         justify-content: space-between;
-        min-height: 50rem;
+        min-height: 42rem;
         position: relative;
         z-index: -1;
     }
@@ -71,37 +69,23 @@
             repeating-conic-gradient(var(--c1) 0 25%, #0000 0 50%) 0 0/var(--_s),
             radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c1);
 
-
-        h1 {
-            color: v.$textTitle;
-            text-shadow: v.$textShadowT .1rem 0 1rem;
-            margin: 0;
-            padding: 4rem 0rem 0rem 0rem;
-            text-align: center;
-        }
-
         p {
             color: v.$textInfo;
-            text-shadow: v.$textShadowT .1rem 0 .1rem;
+            text-shadow: v.$textTitleLow 0rem 0 .2rem;
             margin: 0;
-            padding: 2rem 1rem 0rem 0rem;
-            text-align: center;
-            font-size: 1.3rem;
+            padding: 2rem 2rem 0rem 2rem;
+            text-align: justify;
+            font-size: 1.5rem;
+            font-weight: 900;
         }
 
 
         @include m.tablet {
             z-index: -1;
             position: absolute;
-            min-height: 50rem;
-            padding-top: 10rem;
-
-            h1 {
-                padding: 5rem 0rem 0rem 60%;
-            }
-
+           min-height: 100%;
             p {
-                padding: 2rem 1rem 0rem 60%;
+                padding: 13rem 5rem 0rem 60%;
             }
 
         }
@@ -115,11 +99,16 @@
         }
 
         .container-coffe {
-            width: 20rem;
-            height: 20rem;
+            width: 10rem;
+            height: 10rem;
             border-radius: 4rem;
             background: transparent;
             //box-shadow: 0 .5rem 3rem v.$backgroundColorT;
+
+            @include m.tablet{
+                width: 20rem;
+                height: 20rem;
+            }
         }
 
         .coffee {

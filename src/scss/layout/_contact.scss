@@ -1,0 +1,130 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.content-main_contacto {
+    background-color: v.$white;
+    border-radius: 2rem;
+    height: auto;
+    box-shadow: 0rem .2rem 1rem v.$grayBla;
+
+    h1 {text-align: center;
+        padding: 5rem 2rem 0rem 2rem ;
+        color: v.$textTitle;
+        -webkit-text-stroke: .02rem v.$backgroundColorL;
+        text-shadow: 0 .5rem 1.5rem v.$backgroundColorT;
+    }
+}
+
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    gap: 5rem;
+
+    &_media {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem;
+        gap: 2rem;
+
+        a {
+            background-color: v.$backgroundColorL;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            font-weight: 900;
+            font-size: 2rem;
+            box-shadow: 0rem .1rem .8rem v.$textShadowT;
+
+            &:hover {
+                font-size: 3rem;
+                box-shadow: 0rem .1rem 1.2rem v.$blueBla;
+            }
+
+        }
+
+        @include m.tablet {
+            flex-direction: row;
+            justify-content: space-around;
+            gap: .5rem;
+            padding: 7rem;
+        }
+    }
+
+    &_form {
+        max-width: 85%;
+        background-color: v.$backgroundColorL;
+        border-radius: 2rem;
+        box-shadow: 0rem .2rem 1rem v.$grayBla;
+
+        @include m.tablet {
+            max-width: 80rem;
+        }
+
+        h2 {
+            margin: 0;
+            color: v.$textTitle;
+            padding: 3rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        fieldset {
+            border: 1px solid transparent;
+            border-top-color: black;
+            box-sizing: border-box;
+        }
+
+        legend {
+            font-size: 2rem;
+            color: v.$blueBla;
+        }
+
+        label {
+            font-weight: 900;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        input:not([type="submit"]),
+        textarea,
+        select {
+            padding: 1rem;
+            display: block;
+            width: 100%;
+            font-size: 1.5rem;
+            background-color: v.$white;
+            border: 1px solid v.$grayBla;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        textarea {
+            height: 20rem;
+        }
+
+        .boton-blue {
+            border-radius: 2rem;
+            background-color: v.$colorMenubackT;
+            color: v.$white;
+            width: 15rem;
+            border: none;
+
+            &:hover {
+                background-color: v.$blueBla;
+                transition: 0.3s;
+            }
+
+            &:active {
+                background-color: #44a8d6;
+            }
+        }
+
+    }
+}
+
+div[disabled] {
+    pointer-events: none; // <---- key point
+    opacity: 0.3;
+}

@@ -43,7 +43,48 @@
             flex-direction: row;
             margin-top: 7rem;
             gap: 5rem;
-            
+
+        }
+    }
+
+    
+    .time-addres {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: v.$backgroundColorL;
+        border-radius: 2rem;
+        p {
+            margin: 0;
+            padding: 2rem;
+            font-size: 1.7rem;
+            text-align: justify;
+        }
+
+        .time {
+            font-size: 1.4rem;
+            color: v.$blueBla;
+            font-weight: 900;
+            text-align: center;
+
+            span {
+                font-weight: 400;
+            }
+        }
+
+        .address {
+            font-size: 1.4rem;
+            text-align: center;
+            color: v.$blueBla;
+
+            span {
+                font-weight: 900;
+
+                &:last-of-type {
+                    font-weight: 400;
+                    font-size: 1.1rem;
+                }
+            }
         }
     }
 
@@ -70,8 +111,7 @@
             padding: 2rem;
             color: v.$textInfo;
             font-size: 1.7rem;
-            text-align: center;
-            
+            text-align: justify;
         }
     }
 }
@@ -115,7 +155,7 @@
         }
     }
 
-    @include m.tablet{
+    @include m.tablet {
         margin: 0rem 2rem 2rem 0;
     }
 }
@@ -134,7 +174,7 @@
     }
 }
 
-.view-menu-images{
+.view-menu-images {
     display: grid;
     grid-template-columns: repeat(2, 15rem);
     grid-template-rows: repeat(2, 15rem);

@@ -10,20 +10,23 @@ const sass = gulpSass(dartSass)
 import terser from 'gulp-terser'
 import sharp from 'sharp'
 
-export function js( done ) {
-    src('src/js/app.js')
+export function js(done) {
+    src('src/js/*.js')
         .pipe(terser())
-        .pipe( dest('build/js') ) 
+        .pipe(dest('build/js'))
+    // src('src/js/game.js')
+    //     .pipe(terser())
+    //     .pipe(dest('build/js'))
 
     done()
 }
 
-export function css( done ) {
-    src('src/scss/app.scss', {sourcemaps: true})
-        .pipe( sass({
+export function css(done) {
+    src('src/scss/app.scss', { sourcemaps: true })
+        .pipe(sass({
             outputStyle: 'compressed'
-        }).on('error', sass.logError) )
-        .pipe( dest('build/css', {sourcemaps: '.'}) )
+        }).on('error', sass.logError))
+        .pipe(dest('build/css', { sourcemaps: '.' }))
 
     done()
 }
@@ -43,7 +46,7 @@ export async function crop(done) {
         images.forEach(file => {
             const inputFile = path.join(inputFolder, file)
             const outputFile = path.join(outputFolder, file)
-            sharp(inputFile) 
+            sharp(inputFile)
                 .resize(width, height, {
                     position: 'centre'
                 })
@@ -59,7 +62,7 @@ export async function crop(done) {
 export async function imagenes(done) {
     const srcDir = './src/img';
     const buildDir = './build/img';
-    const images =  await glob('./src/img/**/*{jpg,png}')
+    const images = await glob('./src/img/**/*{jpg,png}')
 
     images.forEach(file => {
         const relativePath = path.relative(srcDir, path.dirname(file));
@@ -91,4 +94,4 @@ export function dev() {
     watch('src/img/**/*.{png,jpg}', imagenes)
 }
 
-export default series( crop, js, css, imagenes, dev )
+export default series(crop, js, css, imagenes, dev)

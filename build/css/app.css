@@ -920,7 +920,7 @@ body > section {
   outline: 5px solid #cbd4dd;
 }
 .view-menu-images .image:nth-of-type(2) {
-  background: url(../img/gallery/full/sanw.avif?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat 50% 50%/cover;
+  background: url(../img/gallery/full/ensalada.avif?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat 50% 50%/cover;
 }
 .view-menu-images .image:nth-of-type(2):after {
   position: absolute;
@@ -946,7 +946,7 @@ body > section {
   outline: 5px solid #cbd4dd;
 }
 .view-menu-images .image:nth-of-type(4) {
-  background: url(../img/gallery/full/panke.avif?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat 50% 50%/cover;
+  background: url(../img/gallery/full/brow.avif?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat 50% 50%/cover;
 }
 .view-menu-images .image:nth-of-type(4):after {
   position: absolute;
@@ -1159,7 +1159,7 @@ body > section {
   font-size: 1rem;
 }
 .produc-price_info p {
-  text-transform: capitalize;
+  text-transform: none;
   color: #364351;
   font-size: 1.2rem;
   margin: 0;
